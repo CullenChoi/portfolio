@@ -1,0 +1,33 @@
+/* Homepage hero: photograph blended into the Field Notes green. */
+.hero {
+  isolation: isolate;
+  background: #405c32;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(64, 92, 50, .96) 0%, rgba(64, 92, 50, .72) 52%, rgba(24, 42, 29, .67) 100%), url("/images/pukeko-and-chick.jpg") 67% center / cover no-repeat;
+  background-blend-mode: multiply;
+  opacity: .72;
+}
+
+/* The original right-hand image becomes the page-wide blended image layer. */
+.hero-visual { display: none; }
+.hero-copy, .side-note { position: relative; z-index: 1; }
+.hero h1 em { color: #d7e6bd; }
+.hero .circle-link { color: #fff; }
+.hero .circle-link span { color: var(--ink); }
+.site-header .wordmark, .site-header nav a, .site-header .shelf-trigger, .site-header .menu { color: #fff; }
+.site-header .wordmark span, .site-header .shelf-trigger span { color: var(--yellow); }
+.site-header .shelf-dropdown a { color: var(--ink); }
+.site-header .nav-contact { border-color: #fff; }
+.site-header .nav-contact:hover { background: #fff; color: var(--green); }
+
+@media (max-width: 760px) {
+  .hero::before { background-position: 62% center; }
+  .site-header nav.open a, .site-header nav.open .shelf-trigger { color: var(--ink); }
+}
