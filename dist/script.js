@@ -52,3 +52,11 @@ if (carousel) {
   carousel.addEventListener('pointerup', stopDrag);
   carousel.addEventListener('pointercancel', stopDrag);
 }
+
+const intro = document.querySelector('.intro');
+if (intro && !intro.querySelector('.intro-profile')) {
+  const profile = document.createElement('figure');
+  profile.className = 'intro-profile';
+  profile.innerHTML = '<img src="images/profile/cullen-field-profile.png" alt="Cullen photographing wildlife in long grass">';
+  intro.prepend(profile);
+}
