@@ -60,3 +60,9 @@ if (intro && !intro.querySelector('.intro-profile')) {
   profile.innerHTML = '<img src="images/profile/cullen-field-profile.png" alt="Cullen photographing wildlife in long grass">';
   intro.prepend(profile);
 }
+
+if (intro) {
+  const introLabel = intro.querySelector(':scope > .eyebrow');
+  const introCopy = intro.querySelector(':scope > div');
+  if (introLabel && introCopy) introCopy.prepend(introLabel);
+}
