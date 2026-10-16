@@ -18,3 +18,6 @@ h1, h2, h3, h4, h5, h6, .email, .dek, .postcard p, .empty {
   .intro { padding: 5rem 7vw; }
   .intro-profile { width: min(68vw, 280px); margin-bottom: 1.4rem; }
 }
+
+/* Global heading system */
+h1,h2,h3,h4,h5,h6{font-family:var(--serif)!important;font-weight:600!important}
