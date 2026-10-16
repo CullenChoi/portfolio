@@ -13,6 +13,8 @@ h1, h2, h3, h4, h5, h6, .email, .dek, .postcard p, .empty {
 /* Small introduction portrait */
 .intro-profile { grid-row: span 2; align-self: center; width: min(100%, 320px); margin: 0; }
 .intro-profile img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+.intro { padding: 8rem 8vw; }
 @media (max-width: 760px) {
+  .intro { padding: 5rem 7vw; }
   .intro-profile { grid-row: auto; width: min(68vw, 280px); margin-bottom: 1.4rem; }
 }
