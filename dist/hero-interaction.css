@@ -40,12 +40,4 @@
 
 .curious-map { display: block; font-size: 3.1em; line-height: .82; text-align: center; filter: saturate(.86); }
 .curious-map-label { display: block; margin-top: .22rem; text-align: center; font-size: .72em; }
-.curious-sun, .curious-flower { position: absolute; display: block; font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
-.curious-sun { left: .38rem; top: -.45rem; font-size: 1.5em; animation: sun-spin 7s linear infinite; }
-.curious-flower { right: .3rem; bottom: .18rem; font-size: 1.35em; animation: flower-drift 2.7s ease-in-out infinite; }
-
-@keyframes sun-spin { to { transform: rotate(360deg); } }
-@keyframes flower-drift { 50% { transform: translateY(-.24rem) rotate(12deg); } }
-
-@media (prefers-reduced-motion: reduce) { .curious-sun, .curious-flower { animation: none; } }
 @media (max-width: 760px) { .curious-popover { width: 155px; font-size: .2em; } }
