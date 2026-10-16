@@ -1,0 +1,16 @@
+/* Homepage hero — original wildlife photograph by Cullen Choi. */
+.hero-visual {
+  background: url("/images/pukeko-and-chick.jpg") 62% center / cover no-repeat;
+  box-shadow: 12px 13px 0 var(--bark);
+}
+
+/* The photograph replaces the previous illustrative specimen artwork. */
+.hero-visual > * {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .hero-visual {
+    background-position: 65% center;
+  }
+}
