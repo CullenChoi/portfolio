@@ -1,0 +1,51 @@
+/* The hero's curious word opens a tiny, animated field map. */
+.hero h1 .curious-trigger {
+  display: inline-block;
+  position: relative;
+  padding: .02em .13em .08em;
+  color: #91a36c;
+  background: #fff;
+  border-radius: .05em;
+  cursor: help;
+  outline-offset: .08em;
+}
+
+.hero h1 .curious-trigger:focus-visible { outline: 2px solid var(--green); }
+
+.curious-popover {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: calc(100% + .24em);
+  width: 190px;
+  padding: .58rem .65rem .48rem;
+  border: 1px solid var(--ink);
+  background: #dce6c7;
+  box-shadow: 4px 5px 0 var(--bark);
+  color: var(--ink);
+  font: .23em/1.15 var(--mono);
+  letter-spacing: .06em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, .5rem) rotate(-2deg) scale(.94);
+  transition: opacity .22s ease, transform .22s ease;
+}
+
+.curious-trigger:hover .curious-popover,
+.curious-trigger:focus .curious-popover,
+.curious-trigger.is-open .curious-popover {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(-2deg) scale(1);
+}
+
+.curious-map { display: block; font-size: 3.1em; line-height: .82; text-align: center; filter: saturate(.86); }
+.curious-map-label { display: block; margin-top: .22rem; text-align: center; font-size: .72em; }
+.curious-sun, .curious-flower { position: absolute; display: block; font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
+.curious-sun { left: .38rem; top: -.45rem; font-size: 1.5em; animation: sun-spin 7s linear infinite; }
+.curious-flower { right: .3rem; bottom: .18rem; font-size: 1.35em; animation: flower-drift 2.7s ease-in-out infinite; }
+
+@keyframes sun-spin { to { transform: rotate(360deg); } }
+@keyframes flower-drift { 50% { transform: translateY(-.24rem) rotate(12deg); } }
+
+@media (prefers-reduced-motion: reduce) { .curious-sun, .curious-flower { animation: none; } }
+@media (max-width: 760px) { .curious-popover { width: 155px; font-size: .2em; } }
