@@ -1,0 +1,22 @@
+/* A tactile field-correspondence carousel. */
+.messages .message-head { max-width: 760px; }
+.message-controls { display: flex; align-items: center; gap: .8rem; margin: 2.7rem 0 .7rem; font: .62rem var(--mono); letter-spacing: .08em; }
+.message-controls span { flex: 1; opacity: .7; }
+.message-nav { width: 2.5rem; height: 2.5rem; border: 1px solid #f2efe5; border-radius: 50%; background: transparent; color: var(--paper); font-size: 1.1rem; cursor: pointer; transition: background .2s, color .2s; }
+.message-nav:hover, .message-nav:focus-visible { background: var(--yellow); color: var(--ink); }
+.messages-carousel { overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; cursor: grab; padding: 1.2rem 0 1.5rem; }
+.messages-carousel.is-dragging { cursor: grabbing; user-select: none; scroll-snap-type: none; }
+.postcards.postcard-track { display: flex; width: max-content; gap: 1.25rem; margin: 0; padding: .3rem; }
+.postcards .postcard { flex: 0 0 clamp(245px, 28vw, 365px); min-height: 300px; aspect-ratio: auto; border: 0; text-align: left; font: inherit; cursor: pointer; scroll-snap-align: start; transition: transform .28s ease, box-shadow .28s ease; }
+.postcards .postcard:nth-child(n) { margin: 0; transform: rotate(0); }
+.postcards .postcard:nth-child(3n + 2) { transform: rotate(1.3deg); }
+.postcards .postcard:nth-child(3n) { transform: rotate(-1.1deg); }
+.postcards .postcard:hover, .postcards .postcard:focus-visible { transform: translateY(-.6rem) rotate(0deg); box-shadow: 7px 8px 0 #1d2b24; outline: none; }
+.postcards .postcard.is-open { transform: translateY(-.6rem) rotate(0deg); box-shadow: 7px 8px 0 #1d2b24; }
+.postcard .card-detail { display: block; max-height: 0; overflow: hidden; opacity: 0; font-size: .78rem; line-height: 1.4; transition: max-height .35s ease, opacity .25s ease, margin .25s ease; }
+.postcard.is-open .card-detail { max-height: 7rem; margin: .9rem 0; opacity: .82; }
+.moss { background: #91a36c; color: var(--ink); }
+.peach { background: #e0a286; color: var(--ink); }
+.lilac { background: #b8a6c9; color: var(--ink); }
+.cream { background: #ece5cf; color: var(--ink); }
+@media (max-width: 760px) { .message-controls { margin-top: 2rem; } .postcards .postcard { flex-basis: min(78vw, 330px); min-height: 285px; } }
