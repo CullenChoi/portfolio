@@ -1,10 +1,10 @@
-:root { --paper:#f2efe5; --ink:#1d2b24; --green:#405c32; --lichen:#91a36c; --clay:#c56445; --yellow:#edbd36; --bark:#5a3b2b; --mono:'DM Mono',monospace; --serif:'Fraunces',serif; --sans:'Manrope',sans-serif; }
+:root { --paper:#f2efe5; --ink:#1d2b24; --green:#405c32; --lichen:#91a36c; --clay:#c56445; --yellow:#edbd36; --bark:#5a3b2b; --mono:'DM Mono',monospace; --serif:'Fraunces',serif; --sans:'DM Mono',monospace; }
 body { background: var(--paper); color: var(--ink); }
 .approach-header { min-height: 86px; display:flex; align-items:center; justify-content:space-between; padding:1.3rem 5vw; border-bottom:1px solid #aab3a0; }
 .back-link { color:var(--ink); font:.68rem var(--mono); text-decoration:none; text-transform:uppercase; letter-spacing:.06em; }
 .back-link:hover { color:var(--clay); }
 .approach-hero { min-height:calc(100vh - 86px); padding:11vw 10vw 7vw; display:grid; align-content:center; gap:2rem; background:var(--green); color:var(--paper); }
-.approach-hero h1, .approach-section h2, .principles h2, .collaborators h2, .cv-snapshot h2, .approach-contact h2 { font:500 clamp(3.4rem,8vw,8.8rem)/.9 var(--serif); letter-spacing:-.065em; margin:0; }
+.approach-hero h1, .approach-section h2, .principles h2, .collaborators h2, .cv-snapshot h2, .approach-contact h2 { font:500 clamp(3.4rem,8vw,8.8rem)/.9 var(--serif); letter-spacing:0; margin:0; }
 .approach-hero h1 em, .approach-contact h2 em { color:var(--yellow); }
 .hero-summary { width:min(100%, 720px); display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end; font-size:1.1rem; }
 .hero-actions { display:flex; flex-wrap:wrap; gap:.65rem; }
