@@ -1,0 +1,99 @@
+/* A small movable field-kit collage for the home hero. */
+.hero-sticker-stack {
+  position: absolute;
+  z-index: 2;
+  right: clamp(1.5rem, 5vw, 6rem);
+  bottom: clamp(1.5rem, 3vw, 3rem);
+  width: min(45vw, 610px);
+  height: 590px;
+  isolation: isolate;
+}
+
+.hero-sticker {
+  --drag-x: 0px;
+  --drag-y: 0px;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transform: translate(var(--drag-x), var(--drag-y)) rotate(var(--tilt));
+  transform-origin: center;
+  transition: transform .55s cubic-bezier(.2, .82, .25, 1);
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.hero-sticker img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(5px 0 0 #fffdf7) drop-shadow(-5px 0 0 #fffdf7) drop-shadow(0 5px 0 #fffdf7) drop-shadow(0 -5px 0 #fffdf7) drop-shadow(0 12px 13px rgba(8, 21, 12, .28));
+}
+.hero-sticker:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
+.hero-sticker.is-dragging { z-index: 10; cursor: grabbing; }
+
+.sticker-bottle { --tilt: 8deg; top: 4px; right: 2px; width: 204px; height: 281px; z-index: 2; }
+.sticker-camera { --tilt: -8deg; top: 152px; left: 2px; width: 260px; height: 196px; z-index: 4; }
+.sticker-book-nz { --tilt: 5deg; right: 166px; bottom: 0; width: 180px; height: 250px; z-index: 4; }
+.sticker-book-aus { --tilt: -5deg; right: 8px; bottom: 28px; width: 180px; height: 250px; z-index: 5; }
+.sticker-binoculars { --tilt: -3deg; top: 84px; left: 142px; width: 300px; height: 225px; z-index: 6; }
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-sticker-stack:hover .sticker-bottle { --drag-x: 7px; --drag-y: -8px; }
+  .hero-sticker-stack:hover .sticker-camera { --drag-x: -9px; --drag-y: 8px; }
+  .hero-sticker-stack:hover .sticker-book-nz { --drag-x: 6px; --drag-y: 8px; }
+  .hero-sticker-stack:hover .sticker-book-aus { --drag-x: 10px; --drag-y: 6px; }
+  .hero-sticker-stack:hover .sticker-binoculars { --drag-y: -9px; }
+}
+
+.weta-pointer {
+  position: fixed;
+  z-index: 50;
+  width: 84px;
+  height: 84px;
+  pointer-events: none;
+  opacity: 0;
+  object-fit: contain;
+  transform: translate(-42%, -20%);
+  transition: opacity .15s ease;
+}
+.weta-pointer.is-visible { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .hero.has-weta-cursor, .hero.has-weta-cursor * { cursor: none; } }
+
+@media (min-width: 761px) and (max-width: 1150px) {
+  .hero-sticker-stack {
+    width: min(45vw, 410px);
+    height: 455px;
+  }
+  .sticker-bottle { top: 4px; right: 5px; width: 135px; height: 186px; }
+  .sticker-camera { top: 122px; left: 0; width: 170px; height: 128px; }
+  .sticker-book-nz { right: 100px; bottom: 0; width: 116px; height: 161px; }
+  .sticker-book-aus { right: 0; bottom: 21px; width: 116px; height: 161px; }
+  .sticker-binoculars { top: 71px; left: 73px; width: 206px; height: 155px; }
+}
+
+@media (max-width: 760px) {
+  .hero-sticker-stack {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    grid-column: 1;
+    width: min(100%, 365px);
+    height: 455px;
+    margin: .4rem auto .2rem;
+  }
+  .sticker-bottle { top: 4px; right: 5px; width: 135px; height: 186px; }
+  .sticker-camera { top: 122px; left: 0; width: 170px; height: 128px; }
+  .sticker-book-nz { right: 100px; bottom: 0; width: 116px; height: 161px; }
+  .sticker-book-aus { right: 0; bottom: 21px; width: 116px; height: 161px; }
+  .sticker-binoculars { top: 71px; left: 73px; width: 206px; height: 155px; }
+  .weta-pointer { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sticker { transition: none; }
+}
