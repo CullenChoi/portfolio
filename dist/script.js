@@ -141,8 +141,9 @@ if (contact) {
   if (footerItems[1]) footerItems[1].textContent = 'All Rights Reserved';
   const email = contact.querySelector('.email');
   if (email && !contact.querySelector('.contact-socials')) {
-    const socials = document.createElement('nav');
+    const socials = document.createElement('div');
     socials.className = 'contact-socials';
+    socials.setAttribute('role', 'navigation');
     socials.setAttribute('aria-label', 'Social media');
     socials.innerHTML = '<a href="https://www.instagram.com/cullen_field_notes/" target="_blank" rel="noreferrer" aria-label="Instagram: cullen_field_notes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg><span>Instagram</span></a><a href="https://www.facebook.com/cullen.choi.9/" target="_blank" rel="noreferrer" aria-label="Facebook: Cullen Choi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.45-3H14V8.1c0-.87.25-1.46 1.5-1.46H17.6V4.02c-.36-.05-1.58-.16-3-.16-2.97 0-5 1.81-5 5.14V10H6.25v3H9.6v8H14Z"></path></svg><span>Facebook</span></a>';
     email.insertAdjacentElement('afterend', socials);
