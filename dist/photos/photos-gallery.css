@@ -35,7 +35,9 @@
   .photos-header { margin-bottom: 5rem; }
   .photos-intro h1 { font-size: 5rem; }
   .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 3rem; }
+  .photo > img { object-fit: cover; object-position: center; }
   .photo:nth-child(n) { grid-column: span 1; aspect-ratio: 4 / 5; }
-  .photo:nth-child(1), .photo:nth-child(4), .photo:nth-child(6) { grid-column: span 2; aspect-ratio: 16 / 10; }
-  .photo:nth-child(5) { aspect-ratio: 1 / 1; }
+  .photo:nth-child(1), .photo:nth-child(4), .photo:nth-child(6), .photo:nth-child(7), .photo:nth-child(10), .photo:nth-child(12), .photo:nth-child(13) { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .photo:nth-child(5), .photo:nth-child(11) { grid-column: span 2; aspect-ratio: 1 / 1; }
+  .photo:nth-child(14) { grid-column: span 2; aspect-ratio: 4 / 5; }
 }
