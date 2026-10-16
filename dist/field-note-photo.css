@@ -1,0 +1,23 @@
+/* Field Note No. 027 — original bird photograph by Cullen Choi. */
+.note-image {
+  background: url("/images/field-note-027-bird.jpg") 58% center / cover no-repeat;
+}
+
+.note-image .branch,
+.note-image .bird {
+  display: none;
+}
+
+.note-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 21, 15, .18), transparent 54%);
+  pointer-events: none;
+}
+
+.note-image .stamp { z-index: 1; }
+
+@media (max-width: 760px) {
+  .note-image { background-position: 61% center; }
+}
