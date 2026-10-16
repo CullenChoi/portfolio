@@ -25,6 +25,18 @@ h1, h2, h3, h4, h5, h6, .email, .dek, .postcard p, .empty {
 .contact-socials a:nth-child(2) svg { fill: currentColor; stroke: none; }
 .contact-socials a:hover { background: var(--yellow); color: var(--green); transform: translateY(-.18rem); }
 .contact-socials + .contact-foot { margin-top: 5rem; }
+
+/* Shared footer */
+.site-footer { margin-top: clamp(4rem, 9vw, 8rem); padding: 1.25rem 6vw; background: var(--ink); color: var(--paper); }
+.site-footer-inner { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 1.25rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, var(--paper) 48%, transparent); font: 500 .62rem var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.site-footer-socials { display: flex; gap: .55rem; }
+.site-footer-socials a { display: grid; width: 2.45rem; height: 2.45rem; place-items: center; border-radius: 50%; background: var(--paper); color: var(--ink); transition: transform .2s ease, background .2s ease, color .2s ease; }
+.site-footer-socials a:hover { background: var(--yellow); color: var(--green); transform: translateY(-2px); }
+.site-footer-socials svg { width: 1.2rem; height: 1.2rem; }
+.site-footer-socials span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.site-footer-top { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+.site-footer-top:hover { color: var(--yellow); text-decoration: underline; }
+@media(max-width:760px) { .site-footer { padding: 1.1rem 7vw; } .site-footer-inner { grid-template-columns: 1fr auto; gap: 1rem; } .site-footer-socials { grid-column: 1 / -1; grid-row: 2; } .site-footer-inner > span:last-of-type { grid-column: 1 / -1; grid-row: 3; } }
 .contact-socials a:focus-visible { outline: 2px solid currentColor; outline-offset: .25rem; }
 .intro .text-link, .note-copy .text-link { transition: color .2s ease, text-decoration-color .2s ease; }
 .intro .text-link span, .note-copy .text-link span { display: inline-block; transition: transform .2s ease; }
