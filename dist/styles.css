@@ -14,6 +14,23 @@ h1, h2, h3, h4, h5, h6, .email, .dek, .postcard p, .empty {
 .intro-profile { align-self: center; width: min(100%, 320px); margin: 0; border-radius: 50%; overflow: hidden; }
 .intro-profile img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
 .intro { padding: 8rem 8vw; }
+.hero-intro { max-width: 630px; font-size: .85rem; line-height: 1.7; }
+.hero-intro p { margin: 0 0 1rem; }
+.intro > div > p:not(.eyebrow) { width: 100%; max-width: none; font-size: .85rem !important; line-height: 1.7; }
+.contact-start { margin-top: 2.2rem; }
+.contact-socials { display: flex; gap: .75rem; margin-top: 1.25rem; }
+.contact-socials a { display: inline-grid; width: 2.85rem; height: 2.85rem; place-items: center; border-radius: 50%; background: var(--ink); color: var(--paper); text-decoration: none; transition: transform .2s ease, background .2s ease, color .2s ease; }
+.contact-socials span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.contact-socials svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.contact-socials a:nth-child(2) svg { fill: currentColor; stroke: none; }
+.contact-socials a:hover { background: var(--yellow); color: var(--green); transform: translateY(-.18rem); }
+.contact-socials + .contact-foot { margin-top: 5rem; }
+.contact-socials a:focus-visible { outline: 2px solid currentColor; outline-offset: .25rem; }
+.intro .text-link, .note-copy .text-link { transition: color .2s ease, text-decoration-color .2s ease; }
+.intro .text-link span, .note-copy .text-link span { display: inline-block; transition: transform .2s ease; }
+.intro .text-link:hover, .note-copy .text-link:hover { color: var(--clay); text-decoration-color: var(--clay); }
+.intro .text-link:hover span, .note-copy .text-link:hover span { transform: translateX(.3rem); }
+.intro .text-link:focus-visible, .note-copy .text-link:focus-visible { outline: 2px solid currentColor; outline-offset: .3rem; }
 @media (max-width: 760px) {
   .intro { padding: 5rem 7vw; }
   .intro-profile { width: min(68vw, 280px); margin-bottom: 1.4rem; }
