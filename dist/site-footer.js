@@ -2,6 +2,8 @@
   function mountFooter() {
     if (document.querySelector('.contact-foot')) return;
 
+    if (!document.getElementById('top')) document.body.id = 'top';
+
     const existing = document.querySelector('.approach-footer');
     const footer = existing || document.createElement('footer');
     footer.className = 'site-footer';
@@ -12,7 +14,12 @@
         <a class="site-footer-top" href="#top">Back to top ↑</a>
       </div>`;
 
-    if (!existing) (document.querySelector('main') || document.body).append(footer);
+    if (!existing) {
+      const container = document.querySelector('main') || document.body;
+      const bottomPadding = Number.parseFloat(getComputedStyle(container).paddingBottom) || 0;
+      footer.style.marginBottom = `-${bottomPadding}px`;
+      container.append(footer);
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountFooter);
