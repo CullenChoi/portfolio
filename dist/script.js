@@ -75,7 +75,7 @@ const setText = (selector, text) => {
 
 setText('.hero .eyebrow', 'A CURIOUS DESIGNER FINDING HIS WAY INTO ECOLOGY');
 const heroHeading = document.querySelector('.hero h1');
-if (heroHeading) heroHeading.innerHTML = 'Designing closer relationships with <em>nature</em>.';
+if (heroHeading) heroHeading.innerHTML = 'Making room for <em>nature</em>.';
 const heroLede = document.querySelector('.hero .lede');
 if (heroLede) {
   const heroIntro = document.createElement('div');
