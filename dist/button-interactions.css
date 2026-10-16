@@ -1,0 +1,42 @@
+/* Shared hover and focus feedback for the site's interactive controls. */
+button,
+.button,
+.circle-link,
+.nav-contact,
+.filter-link,
+.shelf-trigger {
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+button:hover:not(:disabled),
+.button:hover,
+.circle-link:hover,
+.nav-contact:hover,
+.filter-link:hover,
+.shelf-trigger:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+.button:focus-visible,
+.circle-link:focus-visible,
+.nav-contact:focus-visible,
+.filter-link:focus-visible,
+.shelf-trigger:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.button:hover { background: var(--yellow); color: var(--ink); box-shadow: 4px 4px 0 var(--bark); }
+.button:hover span { transform: translateX(.25rem); }
+.button span { transition: transform .2s ease; }
+.circle-link:hover span { transform: rotate(45deg) scale(1.08); }
+.circle-link span { transition: transform .2s ease; }
+.nav-contact:hover { background: var(--ink); color: var(--paper); }
+.shelf-trigger:hover { color: var(--clay); }
+.filters button:hover { box-shadow: 2px 2px 0 var(--bark); }
+.menu:hover { color: var(--clay); }
+
+@media (prefers-reduced-motion: reduce) {
+  button, .button, .circle-link, .nav-contact, .filter-link, .shelf-trigger, .button span, .circle-link span { transition: none; }
+}
