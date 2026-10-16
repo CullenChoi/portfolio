@@ -10,7 +10,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(90deg, rgba(64, 92, 50, .96) 0%, rgba(64, 92, 50, .72) 52%, rgba(24, 42, 29, .67) 100%), url("/images/pukeko-and-chick.jpg") 67% center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(64, 92, 50, .96) 0%, rgba(64, 92, 50, .72) 52%, rgba(24, 42, 29, .67) 100%), url("/images/pukeko-hero.jpg") right center / cover no-repeat;
   background-blend-mode: multiply;
   opacity: .72;
 }
@@ -28,6 +28,6 @@
 .site-header .nav-contact:hover { background: #fff; color: var(--green); }
 
 @media (max-width: 760px) {
-  .hero::before { background-position: 62% center; }
+  .hero::before { background-position: center, 72% center; }
   .site-header nav.open a, .site-header nav.open .shelf-trigger { color: var(--ink); }
 }

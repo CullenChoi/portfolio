@@ -1,6 +1,6 @@
 /* Homepage hero — original wildlife photograph by Cullen Choi. */
 .hero-visual {
-  background: url("/images/pukeko-and-chick.jpg") 62% center / cover no-repeat;
+  background: url("/images/pukeko-hero.jpg") right center / cover no-repeat;
   height: auto;
   min-height: 0;
   aspect-ratio: 3 / 2;
