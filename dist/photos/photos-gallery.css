@@ -7,10 +7,10 @@
 .photos-intro h1 em { color: var(--yellow); font-style: italic; }
 .photos-intro p { font-size: 1.1rem; max-width: 580px; }
 .photo-karakia { max-width: 650px; display: grid; gap: .85rem; }
-.photo-karakia p { margin: 0; font: .76rem/1.55 var(--mono); max-width: none; }
-.photo-karakia strong, .photo-karakia em { display: block; }
-.photo-karakia strong { color: var(--yellow); font-weight: 500; }
-.photo-karakia em { margin-top: .12rem; color: var(--paper); font-style: normal; opacity: .78; }
+.photo-karakia article { display: grid; gap: .22rem; }
+.photo-karakia p { margin: 0; max-width: none; }
+.photo-karakia .te-reo { color: var(--yellow); font: 500 .76rem/1.55 var(--mono); }
+.photo-karakia .translation { color: var(--paper); font: .76rem/1.55 var(--mono); opacity: .78; }
 .photo-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; margin-top: 5rem; }
 .photo { position: relative; display: grid; place-items: center; margin: 0; overflow: hidden; background: #26382d; }
 .photo:nth-child(1) { grid-column: 1 / span 8; aspect-ratio: 8 / 5; }
