@@ -14,6 +14,14 @@
 .photo:nth-child(4) { grid-column: 5 / span 8; aspect-ratio: 8 / 5; }
 .photo:nth-child(5) { grid-column: 1 / span 5; aspect-ratio: 1 / 1; }
 .photo:nth-child(6) { grid-column: 6 / span 7; aspect-ratio: 7 / 5; }
+.photo:nth-child(7) { grid-column: 1 / span 8; aspect-ratio: 8 / 5; }
+.photo:nth-child(8) { grid-column: 9 / span 4; aspect-ratio: 4 / 5; }
+.photo:nth-child(9) { grid-column: 1 / span 4; aspect-ratio: 4 / 5; }
+.photo:nth-child(10) { grid-column: 5 / span 8; aspect-ratio: 8 / 5; }
+.photo:nth-child(11) { grid-column: 1 / span 5; aspect-ratio: 1 / 1; }
+.photo:nth-child(12) { grid-column: 6 / span 7; aspect-ratio: 7 / 5; }
+.photo:nth-child(13) { grid-column: 1 / span 8; aspect-ratio: 8 / 5; }
+.photo:nth-child(14) { grid-column: 9 / span 4; aspect-ratio: 4 / 5; }
 .photo > img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .photo figcaption { position: absolute; bottom: .85rem; left: .85rem; z-index: 1; padding: .5rem .6rem; background: rgba(29, 43, 36, .82); color: var(--paper); font: .6rem var(--mono); letter-spacing: .05em; }
 .photo figcaption span { display: block; margin-top: .2rem; opacity: .75; }
