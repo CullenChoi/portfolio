@@ -1,0 +1,34 @@
+/* A small discovery note, revealed only while exploring the hero image. */
+.hero .side-note { display: none; }
+
+.hero::after {
+  content: "CURRENTLY LOOKING FOR\A BIRDS IN FIELDS";
+  white-space: pre-line;
+  position: absolute;
+  z-index: 2;
+  right: 9vw;
+  bottom: 11%;
+  display: grid;
+  place-items: center;
+  width: 126px;
+  height: 126px;
+  padding: 1rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: #fff;
+  text-align: center;
+  font: 500 .58rem/1.35 var(--mono);
+  letter-spacing: .055em;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.82) rotate(-8deg);
+  transition: opacity .22s ease, transform .3s ease;
+}
+
+.hero:hover::after,
+.hero:focus-within::after {
+  opacity: .94;
+  transform: scale(1) rotate(-4deg);
+}
+
+@media (max-width: 760px), (hover: none) { .hero::after { display: none; } }
