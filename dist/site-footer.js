@@ -4,8 +4,11 @@
 
     if (!document.getElementById('top')) document.body.id = 'top';
 
-    const existing = document.querySelector('.approach-footer');
-    const footer = existing || document.createElement('footer');
+    const existing = document.querySelector('.site-footer, .approach-footer');
+    if (existing) existing.remove();
+
+    const main = document.querySelector('main');
+    const footer = document.createElement('footer');
     footer.className = 'site-footer';
     footer.innerHTML = `
       <div class="site-footer-inner">
@@ -14,12 +17,15 @@
         <a class="site-footer-top" href="#top">Back to top ↑</a>
       </div>`;
 
-    if (!existing) {
-      const container = document.querySelector('main') || document.body;
-      const bottomPadding = Number.parseFloat(getComputedStyle(container).paddingBottom) || 0;
-      footer.style.marginBottom = `-${bottomPadding}px`;
-      container.append(footer);
-    }
+    const mainStyle = main ? getComputedStyle(main) : null;
+    const bodyStyle = getComputedStyle(document.body);
+    const background = mainStyle && mainStyle.backgroundColor !== 'rgba(0, 0, 0, 0)'
+      ? mainStyle.backgroundColor
+      : bodyStyle.backgroundColor;
+
+    footer.style.setProperty('--footer-background', background);
+    footer.style.setProperty('--footer-foreground', mainStyle?.color || bodyStyle.color);
+    document.body.append(footer);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountFooter);

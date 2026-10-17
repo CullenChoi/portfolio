@@ -26,12 +26,15 @@ h1, h2, h3, h4, h5, h6, .email, .dek, .postcard p, .empty {
 .contact-socials a:hover { background: var(--yellow); color: var(--green); transform: translateY(-.18rem); }
 .contact-socials + .contact-foot { margin-top: 5rem; }
 
-/* One shared footer treatment; colour inherits from the page it sits within. */
-.site-footer { padding-bottom: 2rem; background: transparent; color: inherit; }
-.contact-foot, .site-footer-inner { display: flex; justify-content: space-between; gap: 2rem; border-top: 1px solid color-mix(in srgb, currentColor 48%, transparent); margin-top: 5rem; padding-top: 1rem; font: .6rem var(--mono); letter-spacing: .05em; }
-.site-footer-top { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+/* One shared footer treatment. The footer follows the page's colour context,
+   while its margins, rule, type and alignment stay identical everywhere. */
+.site-footer { margin: 0; padding: 5rem 8vw 2rem; background: var(--footer-background, transparent); color: var(--footer-foreground, inherit); }
+.contact-foot, .site-footer-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; border-top: 1px solid color-mix(in srgb, currentColor 48%, transparent); margin-top: 0; padding-top: 1rem; font: .6rem var(--mono); letter-spacing: .05em; }
+.contact-foot { margin-top: 5rem; }
+.contact-foot a, .site-footer-top { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+.contact-foot a:last-child, .site-footer-top { justify-self: end; }
 .site-footer-top:hover { color: var(--yellow); text-decoration: underline; }
-@media(max-width:760px) { .site-footer { padding-bottom: 2rem; } .contact-foot, .site-footer-inner { margin-top: 5rem; flex-wrap: wrap; } }
+@media(max-width:760px) { .site-footer { padding: 4rem 7vw 2rem; } .contact-foot, .site-footer-inner { grid-template-columns: 1fr; gap: .75rem; } .contact-foot a:last-child, .site-footer-top { justify-self: start; } }
 .contact-socials a:focus-visible { outline: 2px solid currentColor; outline-offset: .25rem; }
 .intro .text-link, .note-copy .text-link { transition: color .2s ease, text-decoration-color .2s ease; }
 .intro .text-link span, .note-copy .text-link span { display: inline-block; transition: transform .2s ease; }
