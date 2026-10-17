@@ -100,10 +100,10 @@ setText('.work-section .section-head p:not(.eyebrow)', 'I use design and field p
 const projectCopy = [
   ['Your Birding Guide', 'A seasonal birding field guide for Shakespear Regional Park.'],
   ['Ka Tū Au Hei Kaitiaki', 'Wildlife photographs celebrating the beauty and diversity of Aotearoa.'],
-  ['How to Birdwatch Ethically', 'A practical guide to observing birds with care, patience and respect.'],
   ['Open Your Five Senses', 'A beginner-friendly guided walk for noticing nature in new ways.'],
   ['Understory Almanac', 'Drawn observations and stories from the forest floor.'],
-  ['Small Ways of Nature Journaling', 'An outdoor workshop for recording what you notice through words and drawing.']
+  ['Small Ways of Nature Journaling', 'An outdoor workshop for recording what you notice through words and drawing.'],
+  ['How to Birdwatch Ethically', 'A small guide to looking with care, patience and respect.']
 ];
 document.querySelectorAll('.project').forEach((project, index) => {
   const copy = projectCopy[index];
