@@ -1,0 +1,26 @@
+/* Shared Field Notes mark, used by every page header. */
+.wordmark {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 112px !important;
+  height: 53px !important;
+  background-color: currentColor !important;
+  -webkit-mask: url("/images/field-notes-logo.svg") center / contain no-repeat !important;
+  mask: url("/images/field-notes-logo.svg") center / contain no-repeat !important;
+  color: var(--ink) !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  letter-spacing: 0 !important;
+  text-decoration: none !important;
+}
+
+.wordmark span { display: none !important; }
+.site-header .wordmark,
+.photos .wordmark { color: var(--paper) !important; }
+
+/* Books page: let the italic final phrase sit within the field palette. */
+.books .books-intro h1 em { color: #91a36c !important; }
+
+@media (max-width: 760px) {
+  .wordmark { width: 92px !important; height: 43px !important; }
+}
